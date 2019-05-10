@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSC 2100 - Sorting algorithms</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript" src="js/arial.js"></script>
+<script type="text/javascript" src="js/cuf_run.js"></script>
+</head>
+<body>
+<div class="main">
+  <div class="main_resize">
+    <div class="header">
+      <div class="logo">
+        <h1><a href="#"><span>CSC</span> 2100<small>Data Sructures and Algorithms</small></a></h1>
+      </div>
+      <div class="search">
+        <form method="get" id="search" action="#">
+          <span>
+          <input type="text" placeholder="Search..." name="search" id="s" />
+          <input name="searchsubmit" type="image" src="images/search.gif" value="Go" id="searchsubmit" class="btn"  />
+          </span>
+        </form>
+        <!--/searchform -->
+        <div class="clr"></div>
+      </div>
+      <div class="clr"></div>
+      <div class="menu_nav">
+        <ul>
+          <li class="active"><a href="index.php">Home</a></li>
+          <li><a href="blog.php">Blog</a></li>
+          <li><a href="about.php">About Us</a></li>
+          <li><a href="contact.php">Contact Us</a></li>
+        </ul>
+        <div class="clr"></div>
+      </div>
+      <!--div class="hbg"><img src="images/header_images.jpg" width="923" height="291" alt="" /></div-->
+    </div>
+    <div class="content">
+      <div class="content_bg">
+        <div class="mainbar">
+          <div class="article">
+            <h2><span>Time Complexity</span></h2>
+            <div class="clr"></div>
+            <p>
+				Time complexity of an algorithm refers to the total time required by the program to run to completion. The time depends on the input, most often on the size of the input.
+                Time complexity is most often expressed using the <strong>Big O notation</strong>
+                Time Complexity is most commonly estimated by counting the number of elementary functions performed by the algorithm				
+
+			</p>
+			<h2><span>Worst time complexity</span></h2>
+			    worst-case Time complexity of an algorithm because that is the maximum time taken for any input size. 
+				Since the algorithm's performance varies with different input sizes, the worst case is considered to be efficient.
+
+            <div class="clr"></div>
+          </div>
+          <div class="article">
+            <h2><span>Calculating time complexity of an algorithm</span></h2>
+            <div class="clr"></div>
+			<p>
+				Time Complexity is most commonly estimated by counting the number of basic operations performed by the algorithm</p>
+			<h2><span>Big O notation</span></h2>
+			   The common metric of calculating time complexity is the Big O notation. This removes all constant factors so that the running time can be estimated in relation to N, as N approaches infinity.
+              
+			<h2><span>Consider the algorithms below</span></h2>
+			<pre class="cpp" style="background-color:grey; color:white;"> 1. statement;</pre>
+			Above we have a single statement. Its Time Complexity will be Constant. The running time of the statement will not change in relation to N.
+            <pre class="cpp" style="background-color:grey; color:white;">
+ 1. for(i=0; i &lt; N; i++) {
+ 2.	    statement;
+ 3. }
+</pre>
+			The time complexity for the above algorithm will be Linear. The running time of the loop is directly proportional to N. When N doubles, so does the running time.
+			<pre style="background-color:grey; color:white;">
+ 1. for(i=0; i &lt; N; i++) {
+ 2.     for(j=0; j &lt; N;j++) { 
+ 3.         statement;
+ 4.     }
+ 5. }
+</pre>
+			This time, the time complexity for the above code will be Quadratic. The running time of the two loops is proportional to the square of N. When N doubles, the running time increases by N * N.
+			<pre style="background-color:grey; color:white;" >
+ 1. while(low &lt;= high) {
+ 2. 	mid = (low + high) / 2;
+ 3. 	if (target &lt; list[mid])
+ 4. 		high = mid - 1;
+ 5. 	else if (target &gt; list[mid])
+ 6. 		low = mid + 1;
+ 7. 	else
+ 8. 	break;
+ 9. }
+</pre>
+			This is an algorithm to break a set of numbers into halves, to search a particular field(we will study this in detail later). Now, this algorithm will have a <strong>Logarithmic</strong>Time Complexity. The running time of the algorithm is proportional to the number of times N can be divided by 2(N is high-low here). This is because the algorithm divides the working area in half with each iteration.
+
+			<pre style="background-color:grey; color:white;" >
+ 1. void quicksort(int list[], int left, int right) {
+ 2. 	int pivot = partition(list, left, right);
+ 3. 	quicksort(list, left, pivot - 1);
+ 4. 	quicksort(list, pivot + 1, right);
+ 5. }
+</pre>
+			Taking the previous algorithm forward, above we have a small logic of Quick Sort(we will study this in detail later). Now in Quick Sort, we divide the list into halves every time, but we repeat the iteration N times(where N is the size of list). Hence time complexity will be N*log( N ). The running time consists of N loops (iterative or recursive) that are logarithmic, thus the algorithm is a combination of linear and logarithmic.
+
+             NOTE : In general, doing something with every item in one dimension is linear, doing something with every item in two dimensions is quadratic, and dividing the working area in half is logarithmic.
+			<div class="clr"></div>
+          </div>
+		 
+        </div>
+        <div class="sidebar">
+          <div class="gadget">
+            <h2 class="star"><span>Complexity</span> of algorithms</h2>
+            <div class="clr"></div>
+            <ul class="sb_menu">
+				<li class="active"><a href="timecomplexity.html">Time Complexity</a></li>
+				<li><a href="spacecomplexity.html">Space complexity</a></li>
+				
+            </ul>
+          </div>
+        </div>
+        <div class="clr"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="footer_resize">
+    <p class="lf">&copy; Copyright &middot; 2016 <a href="#">TeamSewante</a>.</p>
+    <div class="clr"></div>
+  </div>
+</div>
+</body>
+</html>

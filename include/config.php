@@ -1,0 +1,6 @@
+<?php
+define("STARTING_STUDENT_NUMBER", 215000001);
+define("NUM_STUDENTS", 40000);
+define("NUM_RECEIPTS", 10);
+
+?>
